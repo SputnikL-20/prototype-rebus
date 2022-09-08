@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    #ship {
+		position: relative;
+		cursor: pointer;
+    }
+	#human {
+		position: relative;
+		z-index: 1;
+	}
+	#koza {
+		position: relative;
+		z-index: 1;
+	}
+	#kapusta {
+		position: relative;
+		z-index: 1;
+	}
+	#volk {
+		position: relative;
+		z-index: 1;
+	}
+  </style>
+</head>
+
+<body>
+
+<img id="volk" src="22217wolfface_98825.png">
+<img id="koza" src="iconfinder-goat-4591892_122119.png">
+<img id="kapusta" src="vegetables_cabbage_food_1808.png">
+<img id="human" src="avatar_face_man_boy_profile_smiley_happy_people_icon_181659.png">
+<img id="ship" src="37_85217.png">
+
+
+  <script>
+  
+	var arr = [];
+	
+	setTimeout(humanJump, 1000);
+	setTimeout(kozaJumpLeft, 2000);
+	setTimeout(forwardRight, 3000, koza, len = 410);
+	setTimeout(kozaRight, 6000);
+	setTimeout(forwardLeft, 7000, null );
+	setTimeout(kapustaJump, 10000);
+	setTimeout(forwardRight, 11000, kapusta, len = 270);
+	setTimeout(kapustaRight, 14000);
+	setTimeout(kozaJumpRight, 15000);
+	setTimeout(forwardLeft, 16000, koza);
+	setTimeout(kozaJLeft, 19000);
+	setTimeout(volkJump, 20000);
+	setTimeout(forwardRight, 21000, volk, len = 530);
+	setTimeout(volkRight, 24000);
+	setTimeout(forwardLeft, 25000, null );
+	setTimeout(kozaJumpLeft, 28000);
+	setTimeout(forwardRight, 29000, koza, len = 410);
+	setTimeout(kozaRight, 32000);
+	setTimeout(humanRight, 33000);
+	
+	<!-- console.log(arr); -->
+	
+    function forwardRight( arg, len ) {
+		arr = [0];
+		let i = 1;
+		let start = Date.now();
+		let timer = setInterval(function() {
+		
+			let timePassed = Date.now() - start;
+
+			<!-- console.log(Date.now()); -->
+			<!-- console.log(timePassed); -->
+
+			ship.style.left = timePassed / 5 + 'px';
+
+			arr[i] = timePassed;
+
+			<!-- console.log(timePassed / 5 + 'px'); -->
+
+			human.style.left = 250 + timePassed / 5 + 'px';
+
+			arg.style.left = len + timePassed / 5 + 'px';
+
+			i++;
+
+			if (timePassed > 2000) clearInterval(timer);
+
+		}, 20);
+    }
+
+    function forwardLeft( arg ) {
+		
+		let j = arr.length;
+		let timer = setInterval(function() {
+
+			ship.style.left = arr[j] / 5 + 'px';
+			human.style.left = 250 + arr[j] / 5 + 'px';
+			
+			if ( arg != null ) {
+				arg.style.left = 410 + arr[j] / 5 + 'px';
+			}
+			
+			j--;
+			
+			if (j < 0) clearInterval(timer);
+
+		}, 20);
+    }
+	
+	function humanJump() {
+		human.style.left = "250px";
+		human.style.top  = "-52px"
+	}
+	function kozaJumpLeft() {
+		koza.style.left = "410px";
+		koza.style.top  = "-40px"
+	}
+	function kozaRight() {
+		koza.style.left = "1050px";
+		koza.style.top  = "0px";
+	}
+	function kapustaJump() {
+		kapusta.style.left = "270px";
+		kapusta.style.top = "-45px";
+	}
+	function kapustaRight() {
+		kapusta.style.left = "1050px";
+		kapusta.style.top  = "0px";
+	}
+	function kozaJumpRight() {
+		koza.style.left = "815.4px";
+		koza.style.top  = "-40px";
+	}
+	function kozaJLeft() {
+		koza.style.left = "210px";
+		koza.style.top  = "0px";
+	}
+	function volkJump() {
+		volk.style.left = "530px";
+		volk.style.top  = "-45px";	
+	}
+	function volkRight() {
+		volk.style.left = "1450px";
+		volk.style.top  = "0px";
+	}
+	function humanRight() {
+		human.style.left = "1180px";
+		human.style.top  = "0px"
+	}
+
+  </script>
+
+</body>
+
+</html>
