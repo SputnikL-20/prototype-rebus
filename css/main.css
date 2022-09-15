@@ -1,0 +1,45 @@
+    #ship {
+		position: relative;
+		cursor: pointer;
+		width: 128px;
+    }
+	#human {
+		position: relative;
+		cursor: pointer;
+		z-index: 1;
+		width: 64px;
+	}
+	#koza {
+		position: relative;
+		cursor: pointer;
+		z-index: 1;
+		width: 64px;
+	}
+	#kapusta {
+		position: relative;
+		cursor: pointer;
+		z-index: 1;
+		width: 64px;
+	}
+	#volk {
+		position: relative;
+		cursor: pointer;
+		z-index: 1;
+		width: 64px;
+	}
+	.dialog {
+		background-color: cornflowerblue;
+		border: none;
+	}   
+	.dialog-title {
+		border-bottom: none;
+	}
+	.dialog-actions {
+		border-top: none;
+	}
+	.button.success:hover {
+		border: none;
+	}
+	.button.alert:hover {
+		border: none;
+	}
